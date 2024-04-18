@@ -2963,12 +2963,12 @@ const MyFlixApplication = ()=>{
             children: "Good morning"
         }, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 10,
+            lineNumber: 11,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
@@ -2979,7 +2979,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MyFlixApplication, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 20,
+    lineNumber: 21,
     columnNumber: 13
 }, undefined));
 var _c;
