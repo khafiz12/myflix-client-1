@@ -1,18 +1,55 @@
+import PropTypes from "prop-types";
+import {useState, useEffect} from "react";
 export const MovieView = ({movie, onBackClick}) => {
     return (
         <div>
             <div>
-                <img width={500} src={movie.image} />
+                <img src={movie.image} width={500} />
             </div>
             <div>
-                <span>title:</span>
+                <span>Title: </span>
                 <span>{movie.title}</span>
             </div>
             <div>
-                <span>director: </span>
-                <span>{movie.director}</span>
+                <span>Director: </span>
+                <span>{movie.director.name}</span>
+            </div>
+            <div>
+                <span>Bio: </span>
+                <span>{movie.director.bio}</span>
+            </div>
+            <div>
+                <span>Birthday: </span>
+                <span>{movie.director.birthday}</span>
+            </div>
+            <div>
+                <span>Deathday: </span>
+                <span>{movie.director.deathday}</span>
+            </div>
+            <div>
+                <span>Description: </span>
+                <span>{movie.description}</span>
+            </div>
+            <div>
+                <span>Genre: </span>
+                <span>{movie.genre}</span>
             </div>
             <button onClick={onBackClick}>Back button</button>
         </div>
     );
 };
+
+MovieView.proptypes = {
+    movie: PropTypes.shape({
+        image: PropTypes.string,
+        title: PropTypes.string,
+        director: PropTypes.shape({
+            name:PropTypes.string,
+            bio: PropTypes.string,
+            birthday: PropTypes.string,
+            deathday: PropTypes.string
+        }).isRequired,
+        description: PropTypes.string,
+        genre: PropTypes.string,
+    }).isRequired
+};   

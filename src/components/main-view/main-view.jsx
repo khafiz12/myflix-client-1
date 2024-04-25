@@ -1,27 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => { 
-    const [movies, setMovies] = useState([
-        {id:1, 
-         title: "Inception",
-         image:"https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/?ref_=tt_ov_i",
-         director: "Christopher Nolan" },
-        
-         {id:2, 
-         title: "The God Father",
-         image: "https://www.imdb.com/title/tt0068646/mediaviewer/rm746868224/?ref_=tt_ov_i",
-         director:"Fancis Ford Coppola" },
-
-        {id:3, 
-         title: "Finding Nemo",
-         image: "https://www.imdb.com/title/tt0266543/mediaviewer/rm4042000896/?ref_=tt_ov_i",
-         director: "Andrew Stanton" },
-    ]);
+    const [movies, setMovies] = useState([]);
 
     const [selectedMovie, setSelectedMovie] = useState(null);
- 
+    useEffect(() => {
+      fetch("https://top-movies-flix-0061641eb1b3.herokuapp.com/movies")
+      .then((response) => response.json())
+      .then((data) => {
+        const movieFromApi = data.map((movie) => {
+          return { 
+            id: movie._id, 
+            title: movie.title,
+            image: movie.imageurl,
+            description: movie.description,
+            director: movie.director,
+            genre: movie.genre,
+            featured: movie.featured, 
+          };
+        });
+        setMovies(movieFromApi); 
+      });
+    }, []);
+
+
     if (selectedMovie) {
         return (
            <MovieView movie= {selectedMovie} 
