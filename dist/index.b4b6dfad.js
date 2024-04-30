@@ -27284,7 +27284,7 @@ _c = MovieCard;
 MovieCard.proptypes = {
     movie: (0, _propTypesDefault.default).shape({
         title: (0, _propTypesDefault.default).string,
-        imageurl: (0, _propTypesDefault.default).string,
+        image: (0, _propTypesDefault.default).string,
         director: (0, _propTypesDefault.default).string,
         description: (0, _propTypesDefault.default).string,
         genre: (0, _propTypesDefault.default).string,
