@@ -10,7 +10,7 @@ export const LoginView = ({ onLoggedIn }) => {
             username: username,
             password: password
         };
-    fetch("https://top-movies-flix-0061641eb1b3.herokuapp.com/login ", {
+    fetch("https://top-movies-flix-0061641eb1b3.herokuapp.com/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -33,6 +33,7 @@ export const LoginView = ({ onLoggedIn }) => {
         alert("Something went wrong");
      });        
    };
+   
  return (
     <form onSubmit={handleSubmit}> 
         <label>
