@@ -2,15 +2,15 @@ import React from "react";
 import {useState, useEffect} from "react";
 
 export const LoginView = ({ onLoggedIn }) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [Username, setUsername] = useState("");
+    const [Password, setPassword] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
        
         const data = { 
-            username: username,
-            password: password
+            Username: Username,
+            Password: Password
         };
     fetch("https://top-movies-flix-0061641eb1b3.herokuapp.com/login?Username=&Password=", {
         method: "POST",
@@ -44,7 +44,7 @@ export const LoginView = ({ onLoggedIn }) => {
             Username:
             <input 
             type="text" 
-            value={username}
+            value={Username}
             onChange={(e) => setUsername (e.target.value)}required
              />
         </label>
@@ -52,7 +52,7 @@ export const LoginView = ({ onLoggedIn }) => {
             Password:
             <input 
             type="password"
-            value={password}
+            value={Password}
             onChange={(e) => setPassword (e.target.value)}required />
         </label>
         <button type= "submit">Submit</button>
