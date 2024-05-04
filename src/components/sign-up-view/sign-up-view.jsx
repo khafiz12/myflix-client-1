@@ -1,4 +1,5 @@
 import {useState} from "react";
+
 export const SignupView = () => { 
     const [username, setUsername] = useState ("");
     const [password, setPassword] = useState ("");
@@ -36,7 +37,7 @@ export const SignupView = () => {
         <input 
         type="text"
         value={username}
-        onChange={(e) => setUsername (e.target.value)}
+        onChange={(e) => setUsername(e.target.value)}
         required
         minLength="3" />
       </label>
@@ -45,7 +46,7 @@ export const SignupView = () => {
         <input 
         type="password" 
         value={password}
-        onChange={(e) => setPassword (e.target.value)}
+        onChange={(e) => setPassword(e.target.value)}
         required
         />
       </label>
@@ -62,7 +63,7 @@ export const SignupView = () => {
         <input 
         type="date"
         value={birthday}
-        onChange={(e) => setBirthday (e.target.value)}
+        onChange={(e) => setBirthday(e.target.value)}
         required />
       </label>
       <button type="submit">Submit</button>

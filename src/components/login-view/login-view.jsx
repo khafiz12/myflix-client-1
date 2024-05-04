@@ -1,25 +1,26 @@
 import React from "react";
 import {useState, useEffect} from "react";
+
 export const LoginView = ({ onLoggedIn }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
+       
         const data = { 
             username: username,
             password: password
         };
-    fetch("https://top-movies-flix-0061641eb1b3.herokuapp.com/login", {
+    fetch("https://top-movies-flix-0061641eb1b3.herokuapp.com/login?Username=&Password=", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    })
-    .then((response) => response.json())
+    }).then((response) => response.json())
     .then((data) => {
-        console.log("Login response: ", data);
+        console.log("Login response:", data);
         if(data.user) { 
             localStorage.setItem("user", JSON.stringify(data.user));
             localStorage.setItem("token", data.token);
@@ -29,7 +30,10 @@ export const LoginView = ({ onLoggedIn }) => {
         }
       })
      .catch((error) => {
-        console.error("Error occurred during login", error)
+        console.error("Error occurred during login", error);
+        if (error.response) {
+            console.error("Server responded with.", error.response.data);
+        }
         alert("Something went wrong");
      });        
    };
