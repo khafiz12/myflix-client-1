@@ -16,7 +16,7 @@ export const SignupView = () => {
         };
         fetch("https://top-movies-flix-0061641eb1b3.herokuapp.com/User", {
             method: "POST",
-            body:JSON.stringify(data),
+            body: JSON.stringify(data),
             headers: {
                 "content-Type" : "application/json"
             }
