@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import {useState, useEffect} from "react";
+import "./movie-view.scss";
 export const MovieView = ({movie, onBackClick}) => {
     return (
-        <div>
-            <div>
-                <img src={movie.image} width={500} />
+        <div className="movie-info">
+            <div className="movie-image">
+                <img src={movie.image} width={500} className="image"/>
             </div>
-            <div>
+            <div className="movie-title">
                 <span>Title: </span>
                 <span>{movie.title}</span>
             </div>
@@ -34,7 +35,8 @@ export const MovieView = ({movie, onBackClick}) => {
                 <span>Genre: </span>
                 <span>{movie.genre}</span>
             </div>
-            <button onClick={onBackClick}>Back button</button>
+            <button onClick={onBackClick} className="back-button"
+            >Back button</button>
         </div>
     );
 };
