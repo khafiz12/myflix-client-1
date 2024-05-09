@@ -18,7 +18,7 @@ export const SignupView = () => {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
-                "content-Type" : "application/json"
+                "Content-Type" : "application/json"
             }
 
         }).then((response) => {
