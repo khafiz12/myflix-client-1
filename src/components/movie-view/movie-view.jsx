@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {useState, useEffect} from "react";
+import Col from "react-bootstrap/Col"
 import "./movie-view.scss";
 export const MovieView = ({movie, onBackClick}) => {
     return (

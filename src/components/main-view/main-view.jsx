@@ -3,7 +3,9 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView} from "../sign-up-view/sign-up-view";
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import "./main-view.scss"
 export const MainView = () => { 
     const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
@@ -42,43 +44,43 @@ export const MainView = () => {
       setToken(null);
     };
 
-   if (!user) { 
     return (
-      <>
-      <LoginView onLoggedIn={(user, token) => {
-     setUser(user);
-     setToken(token);}} />
-     or
-     <SignupView />
-     </>
-    );
-   }
+      <Row className="justify-content-md-center">         
+        {!user ? (
+          <>
+            <LoginView onLoggedIn={(user,) => setUser(user)} />
+            or
+            <SignupView />
+          </>
+        ) : selectedMovie ? (
 
- 
-    
-   return ( 
-    <div>
-        <button onClick={handleLogout}>Logout</button>
-        {selectedMovie ? (
-            <MovieView 
-                movie={selectedMovie} 
-                onBackClick={() => setSelectedMovie(null)} 
-            />
+          <Col md={10}>
+          <MovieView style={{border:"1px solid green"}} 
+            movie={selectedMovie} 
+            onBackClick={() => setSelectedMovie(null)} 
+          />
+           <button onClick={handleLogout} className="logoutButton">Logout</button>
+          </Col>
+
+        ) : movies.length === 0 ? (
+          <div>The list is empty!</div>
         ) : (
-            movies.length === 0 ? (
-                <div>The list is empty</div>
-            ) : (
-                movies.map((movie) => (
-                    <MovieCard 
-                        key={movie.id} 
-                        movie={movie} 
-                        onMovieClick={(newSelectedMovie) => {
-                            setSelectedMovie(newSelectedMovie);
-                        }}
-                    />
-                ))
-            )
-        )}
-    </div>
-);
+          <>
+            {movies.map((movie) => (
+             <Col md={8} className= "justify-content-md-center">
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                onMovieClick={(newSelectedMovie) => {
+                  setSelectedMovie(newSelectedMovie);
+                  <button onClick={handleLogout}>Logout</button>
+                }}
+              />    
+             </Col>        
+            ))}
+            <button onClick={handleLogout} className="logoutButton">Logout</button>
+          </>
+        )}      
+      </Row>
+  );
 };

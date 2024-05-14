@@ -1,4 +1,18 @@
-.open-button, .back-button {
+.open-button {
+  color: #f5f5f5;
+  cursor: pointer;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 4px 12px;
+}
+
+.movie-card-image {
+  border-radius: 8px;
+}
+
+.back-button {
   color: #f5f5f5;
   cursor: pointer;
   background-color: #1e90ff;
@@ -14,6 +28,25 @@
 .movie-info {
   font: bold;
   font-size: 20px;
+}
+
+.loginButton, .signUpButton {
+  color: #f5f5f5;
+  cursor: pointer;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+
+.logoutButton {
+  color: #f5f5f5;
+  cursor: pointer;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 15px;
+  padding: 4px 12px;
 }
 
 .my-flix {
