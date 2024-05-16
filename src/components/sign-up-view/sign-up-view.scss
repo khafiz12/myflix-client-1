@@ -5,4 +5,36 @@
     border:none;
     border-radius:4px;
     cursor: pointer;
+    transition: transform 0.3s;
 }
+
+.signUpBotton:hover {
+    transform: scale(1.05);
+}
+
+.signUpForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputUser{
+    width: 500px;
+    height: 20px;
+    margin: 10px
+}
+
+.userNameGroup{
+    margin-bottom: 10px ;
+}
+
+.newUserRegister{
+    font-size: medium;
+}
+
+.newUserDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

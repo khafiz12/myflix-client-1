@@ -35,10 +35,13 @@ export const SignupView = () => {
         });
     };
     return (
-   <Form onSubmit={handleSubmit}> 
-    <Form.Group controlId = "formUsername">
-      <Form.Label>Username</Form.Label> 
-      <Form.Control
+   <Form onSubmit={handleSubmit} className="signUpForm"> 
+   <div className="newUserDiv" >
+     <h1 className= "newUserRegister">New User Register</h1>
+   </div>
+    <Form.Group controlId = "formUsername" className="userNameGroup">
+      <Form.Label>Username</Form.Label > 
+      <Form.Control className="inputUser"
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}required
@@ -46,9 +49,9 @@ export const SignupView = () => {
           />
         </Form.Group>
 
-    <Form.Group controlId = "formPassword">
+    <Form.Group controlId = "formPassword" className="userNameGroup">
       <Form.Label>Password</Form.Label>
-      <Form.Control        
+      <Form.Control className="inputUser"        
         type="password" 
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -56,9 +59,9 @@ export const SignupView = () => {
         />
     </Form.Group>
 
-    <Form.Group controlId = "formEmail">
+    <Form.Group controlId = "formEmail" className="userNameGroup">
       <Form.Label>Email</Form.Label>
-      <Form.Control
+      <Form.Control className="inputUser"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -66,9 +69,9 @@ export const SignupView = () => {
         />
     </Form.Group>
 
-    <Form.Group controlId = "formBirthday">
+    <Form.Group controlId = "formBirthday" className="userNameGorup">
       <Form.Label>Birthday</Form.Label>
-      <Form.Control
+      <Form.Control className="inputUser"
         type="date"
         value={birthday}
         onChange={(e) => setBirthday(e.target.value)}

@@ -47,15 +47,17 @@ export const MainView = () => {
     return (
       <Row className="justify-content-md-center">         
         {!user ? (
-          <>
+          <> 
+          <Col className= "openForm">
             <LoginView onLoggedIn={(user,) => setUser(user)} />
             or
-            <SignupView />
+            <SignupView className="signUp" />
+            </Col>
           </>
         ) : selectedMovie ? (
 
-          <Col md={10}>
-          <MovieView style={{border:"1px solid green"}} 
+          <Col md={8} className="movieView"   >
+          <MovieView style={{border:"10px solid green"}}  
             movie={selectedMovie} 
             onBackClick={() => setSelectedMovie(null)} 
           />
@@ -78,7 +80,7 @@ export const MainView = () => {
               />    
              </Col>        
             ))}
-            <button onClick={handleLogout} className="logoutButton">Logout</button>
+            <button onClick={handleLogout} className="logOutButton">Logout</button>
           </>
         )}      
       </Row>

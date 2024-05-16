@@ -1,4 +1,4 @@
-.logoutButton{
+.logOutButton{
     padding: 4px 12px 4px 12px;
     color:whitesmoke;
     background-color:dodgerblue;
@@ -6,4 +6,21 @@
     border-radius:4px;
     cursor: pointer;
     margin-top: 15px;
+    transition: transform 0.3s;
 }
+
+.logOutButton:hover {
+    transform: scale(1.05)
+}
+
+.movieView{
+    width:100%
+}
+
+.openForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25%;
+}
+
