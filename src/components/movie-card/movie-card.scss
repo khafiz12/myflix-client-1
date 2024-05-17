@@ -1,0 +1,34 @@
+@import url(
+"https://fonts.googleapis.com/css2?family=Honk&family=Poetsen+One&display=swap"); 
+
+.open-button{
+    padding: 4px 12px 4px 12px;
+    color:whitesmoke;
+    background-color:dodgerblue;
+    border:none;
+    border-radius:4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.open-button:hover {
+    transform: scale(1.05);
+}
+
+.movie-card-image{
+    border-radius: 8px;
+    transition: transform 0.3s;
+    cursor: pointer
+}
+
+.movie-card-image:hover {
+   transform: scale(1.05);
+}
+
+.movieTitle{
+    font: bold;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Font Name', Poetsen One ;
+}

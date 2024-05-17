@@ -1,4 +1,8 @@
+import React from "react";
 import {useState} from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import "./sign-up-view.scss"
 
 export const SignupView = () => { 
     const [username, setUsername] = useState ("");
@@ -31,42 +35,49 @@ export const SignupView = () => {
         });
     };
     return (
-      <form onSubmit={handleSubmit}> 
-      <label> 
-        Username:
-        <input 
+   <Form onSubmit={handleSubmit} className="signUpForm"> 
+   <div className="newUserDiv" >
+     <h1 className= "newUserRegister">New User Register</h1>
+   </div>
+    <Form.Group controlId = "formUsername" className="userNameGroup">
+      <Form.Label>Username</Form.Label > 
+      <Form.Control className="inputUser"
         type="text"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        required
-        minLength="3" />
-      </label>
-      <label>
-        Password: 
-        <input 
+        onChange={(e) => setUsername(e.target.value)}required
+        minLength="3" 
+          />
+        </Form.Group>
+
+    <Form.Group controlId = "formPassword" className="userNameGroup">
+      <Form.Label>Password</Form.Label>
+      <Form.Control className="inputUser"        
         type="password" 
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
         />
-      </label>
-      <label> 
-        Email:
-        <input 
+    </Form.Group>
+
+    <Form.Group controlId = "formEmail" className="userNameGroup">
+      <Form.Label>Email</Form.Label>
+      <Form.Control className="inputUser"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        required />
-      </label>
-      <label>
-        Birthday:
-        <input 
+        required 
+        />
+    </Form.Group>
+
+    <Form.Group controlId = "formBirthday" className="userNameGorup">
+      <Form.Label>Birthday</Form.Label>
+      <Form.Control className="inputUser"
         type="date"
         value={birthday}
         onChange={(e) => setBirthday(e.target.value)}
         required />
-      </label>
-      <button type="submit">Submit</button>
-      </form>
+    </Form.Group>
+      <button type="submit" className="signUpButton">Submit</button>
+      </Form>
     );
   };
