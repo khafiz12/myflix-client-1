@@ -1,24 +1,28 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 
 export const UserUpdate = () => { 
-    const storedUser = JSON.parse(localStorage.getItem("user"))
-    const storedToken = localStorage.getItem("token");
+    const [storedUser, setStoredUser] = useState(JSON.parse(localStorage.getItem("user")));
+    const [storedToken, setStoredToken] = useState(localStorage.getItem("token"));
     const [username, setUsername] = useState ("");
-    const [password, setPassword] = useState ("");
+    const [password, setPassword] = useState ("");  
     const [email, setEmail] = useState ("");
     const [birthday, setBirthday] = useState ("");
     
+    useEffect(() => {
+        setStoredUser(JSON.parse(localStorage.getItem("user")));
+        setStoredToken(localStorage.getItem("token"))
+    },[]);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const token = localStorage.getItem('token');
-        if (token) {
-            console.log('Token:', token);
-        } else {
-            console.log('Token not found in localStorage');
+        const token = localStorage.getItem("token");
+        if (!token) {
+            console.log("Token not found in localStorage");
+            return;
         }
         const data ={
             Username: username,
@@ -26,29 +30,34 @@ export const UserUpdate = () => {
             Email: email,
             Birthday: birthday
         };
-        fetch(`https://top-movies-flix-0061641eb1b3.herokuapp.com/User/${storedUser.Username}`, {
+
+        try{
+            const response = await fetch(`https://top-movies-flix-0061641eb1b3.herokuapp.com/User/${storedUser.Username}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
                 "Content-Type" : "application/json",
                 Authorization: `Bearer ${token}`
-            }
-
-        }).then(async (response) => {
+            },
+          }
+        );
             if(response.ok) {
-                alert("User Info Updated!");
-               {
+                alert("User Info Updated!"); 
                 const updatedUser = await response.json();
+                localStorage.setItem("user", JSON.stringify(updatedUser));
                 setUsername(updatedUser.Username);
                 setPassword(updatedUser.Password);
                 setEmail(updatedUser.Email);
                 setBirthday(updatedUser.Birthday);
-               }
+               
           } else{
             alert("Update failed!");
           }
-        });
-    };
+        } catch(error) {
+            console.error("Error updating user", error);
+            alert("Update failed");
+        }
+      };
     return (
    <Form onSubmit={handleSubmit} className="signUpForm"> 
    <div className="newUserDiv" >
