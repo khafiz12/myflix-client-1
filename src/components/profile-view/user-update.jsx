@@ -2,6 +2,7 @@ import React from "react";
 import {useState, useEffect} from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import  "./user-update.scss"
 
 
 export const UserUpdate = () => { 

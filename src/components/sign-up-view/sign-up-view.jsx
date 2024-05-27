@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "./sign-up-view.scss"
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const SignupView = () => { 
     const [username, setUsername] = useState ("");
@@ -37,7 +37,7 @@ export const SignupView = () => {
     return (
    <Form onSubmit={handleSubmit} className="signUpForm"> 
    <div className="newUserDiv" >
-     <h1 className= "newUserRegister">New User Register</h1>
+     <h1 className= "newUserRegister">User Registeration</h1>
    </div>
     <Form.Group controlId = "formUsername" className="userNameGroup">
       <Form.Label>Username</Form.Label > 

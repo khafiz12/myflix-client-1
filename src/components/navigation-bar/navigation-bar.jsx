@@ -1,14 +1,17 @@
+import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css"
+import "./navigation-bar.scss";
+//import "./navigation-bar.scss";
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
     return (
-        <Navbar bg="light" expand="lg">
-            <Container>
+        <>
+        <Navbar bg="light" expand="lg" className="navigation-bar">
+            <Container className="navigation">
                 <Navbar.Brand as={Link} to="/">
-                    MyFlixApp
+                    MoviesFlix
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id= "basic-navbar-nav">
@@ -38,5 +41,12 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 </Navbar.Collapse> 
             </Container>
         </Navbar>
+        <div className="content-below-navigation">   
+        </div>
+        </>
     );
+};
+NavigationBar.propTypes = {
+    user: PropTypes.object,
+    onLoggedOut: PropTypes.func.isRequired,
 };

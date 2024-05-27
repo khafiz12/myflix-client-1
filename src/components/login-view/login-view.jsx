@@ -9,6 +9,11 @@ export const LoginView = ({ onLoggedIn }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    useEffect(() => {
+        setUsername("");
+        setPassword("");
+    },[]);
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(username);
@@ -55,7 +60,9 @@ export const LoginView = ({ onLoggedIn }) => {
         <Form.Control className = "loginForm"
             type="text" 
             value={username}
-            onChange={(e) => setUsername (e.target.value)}required
+            onChange={(e) => setUsername (e.target.value)}
+            required
+            autoComplete="off"
              />
         </Form.Group>
 
@@ -64,7 +71,9 @@ export const LoginView = ({ onLoggedIn }) => {
         <Form.Control className = "loginForm"
             type="password"
             value={password}
-            onChange={(e) => setPassword (e.target.value)}required 
+            onChange={(e) => setPassword (e.target.value)}
+            required 
+            autoComplete="off"
             />
         </Form.Group>
         <Button variant= "primary" type="Submit" className="loginButton">Submit</Button>

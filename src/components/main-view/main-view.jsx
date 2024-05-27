@@ -18,6 +18,9 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken? storedToken: null);
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    const handleToggleFavorite = (movieId, isFavorite) => {
+      console.log(`Toggle favorite for movie with ID ${movieId} (${isFavorite ? 'Add to favorites' : 'Remove from favorites'})`)
+    }
 
     useEffect(() => { 
       if (!token) return;
@@ -54,7 +57,7 @@ export const MainView = () => {
            localStorage.clear();
          }}
       />
-      <Row className="justify-content-md-center">    
+      <Row className="justify-content-md-center movie-card-container">    
         <Routes>
           <Route 
             path="/login"
@@ -63,9 +66,11 @@ export const MainView = () => {
              {user ? (
                <Navigate to="/" />
              ) : (
-            <Col md={5} className= "openForm">
+              <Container>
+            <Col md={12} className= "justify-content-md-center">
             <LoginView onLoggedIn={(user) => setUser(user)} />
             </Col>
+            </Container>
              )}
             </>
            }
@@ -77,7 +82,7 @@ export const MainView = () => {
                 {user ? (
                   <Navigate to="/" />
                 ) : (
-                <Col md ={5}> 
+                <Col md ={12}> 
                 <SignupView className="signUp" />
                 </Col> 
               )}
@@ -111,11 +116,13 @@ export const MainView = () => {
               ) : (
                 <>
                 {movies.map((movie) => (
-             <Col md={8} className= "justify-content-md-center" 
+             <Col md={3} sm={6} xs={12} className= "movie-card-col" 
              key = {movie.id} >
              
               <MovieCard
-                movie={movie} />
+                movie={movie} 
+                onToggleFavorite={handleToggleFavorite}
+                />
                 </Col>
                 ))}
               </>    
