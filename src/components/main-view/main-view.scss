@@ -1,3 +1,29 @@
+.movie-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .movie-card-col {
+    flex: 0 0 calc(33.333% - 20px); // Adjust the width of each column as per your preference
+    max-width: calc(33.333% - 20px); // Adjust the max-width of each column as per your preference
+  }
+  
+  @media (max-width: 768px) {
+    .movie-card-col {
+      flex: 0 0 calc(50% - 20px); // Adjust the width of each column for smaller screens
+      max-width: calc(50% - 20px); // Adjust the max-width of each column for smaller screens
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .movie-card-col {
+      flex: 0 0 calc(100% - 20px); // Adjust the width of each column for mobile screens
+      max-width: calc(100% - 20px); // Adjust the max-width of each column for mobile screens
+    }
+  }
+
 .logOutButton{
     padding: 4px 12px 4px 12px;
     color:whitesmoke;
@@ -13,14 +39,4 @@
     transform: scale(1.05)
 }
 
-.movieView{
-    width:100%
-}
-
-.openForm{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 25%;
-}
 

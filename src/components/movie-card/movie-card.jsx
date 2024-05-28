@@ -1,21 +1,47 @@
 //check movieData to see if its movie or moviedata//
 import PropTypes from "prop-types";
 import { Button, Card, CardBody} from "react-bootstrap";
-import {useState, useEffects} from "react";
+import {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
+import {ThumbsDownIcon} from "../thumbs-down-view/thumbs-down-view";
+import {ThumbsUpIcon} from "../thumbs-up-view/thumbs-up-view";
 import "./movie-card.scss";
-export const MovieCard = ({movie, onMovieClick}) => {
+
+export const MovieCard = ({movie, onToggleFavorite}) => {
+    const [isFavorite, setIsFavorite] = useState(false);
+    const [isHovered, setIsHovered] = useState();
+    const handleToggleFavorite = () => {
+        setIsFavorite(!isFavorite);
+        onToggleFavorite(movie.id, !isFavorite);
+    };
     return ( 
-     <Card>
-        <div onClick={() => onMovieClick(movie)} className="clickable-image">
+     <Card 
+     className="movie-card"
+     onMouseEnter={() => setIsHovered(true)}
+     onMouseLeave={() => setIsHovered(false)}
+     >
+    <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
       <Card.Img variant= "top" src={movie.image} className="movie-card-image"/>
-        </div>
+    </Link>
        <Card.Body> 
         <Card.Title className="movieTitle" >{movie.title}</Card.Title>
         <Card.Text className="movieGenre" >{movie.genre}</Card.Text>
+        <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
 
-   <Button onClick ={() => 
-        onMovieClick(movie)
-        } variant ="link" className="open-button">Open</Button> 
+   <Button variant ="link" className="open-button">Open</Button> 
+        </Link>
+        <Button variant="primary" onClick={handleToggleFavorite}>
+            {isFavorite ? "Remove from Favorites":"Add to Favorites"}
+        </Button>
+        <Button variant="link" className="thumbs-button">
+           <ThumbsUpIcon/>
+        </Button>
+        <Button variant="link" className="thumbs-button">
+           <ThumbsDownIcon/>
+        </Button>
+        {isHovered && (
+            <div className="description-box">{movie.description}</div>
+        )}
       </Card.Body>  
      </Card>
     );
@@ -30,5 +56,6 @@ MovieCard.proptypes = {
         genre: PropTypes.string,
         id: PropTypes.string.isRequired,
         featured: PropTypes.bool
-    }).isRequired
+    }).isRequired,
+    onToggleFavorite: PropTypes.func.isRequired,
 };   

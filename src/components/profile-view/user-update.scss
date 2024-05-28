@@ -1,0 +1,43 @@
+// Styles for the form container
+.signUpForm {
+    width: 100%; // Make the form span the entire width of its container
+    max-width: 400px; // Set a maximum width for the form to prevent it from becoming too wide
+    margin: 0 auto; // Center the form horizontally on the page
+  }
+  
+  // Styles for the heading container
+  .newUserDiv {
+    text-align: center; // Center-align the text within the container
+    margin-bottom: 20px; // Add some bottom margin for spacing between the heading and other elements
+  }
+  
+  // Styles for the heading text
+  .newUserRegister {
+    font-size: 1.5rem; // Increase the font size of the heading text
+  }
+  
+  // Styles for form groups (input fields and labels)
+  .userNameGroup {
+    margin-bottom: 20px; // Add bottom margin for spacing between form groups
+  }
+  
+  // Styles for input fields
+  .inputUser {
+    width: 100%; // Make the input fields span the entire width of their container
+  }
+  
+  // Styles for the submit button
+  .signUpButton {
+    width: 100%; // Make the button span the entire width of its container
+    background-color: #007bff; // Set the background color of the button
+    color: #fff; // Set the text color of the button to white
+    border: none; // Remove the border around the button
+    padding: 10px; // Add padding to the button for spacing
+    border-radius: 5px; // Add border radius for rounded corners
+    cursor: pointer; // Change the cursor to a pointer on hover
+  }
+  
+  // Hover styles for the submit button
+  .signUpButton:hover {
+    background-color: #0056b3; // Change the background color of the button on hover
+  }

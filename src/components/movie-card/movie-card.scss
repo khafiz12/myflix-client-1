@@ -1,34 +1,70 @@
-@import url(
-"https://fonts.googleapis.com/css2?family=Honk&family=Poetsen+One&display=swap"); 
-
-.open-button{
-    padding: 4px 12px 4px 12px;
-    color:whitesmoke;
-    background-color:dodgerblue;
-    border:none;
-    border-radius:4px;
+.card {
+    border: solid; // Remove border from the card
+    background-color: transparent; // Set background color to transparent
+    margin-bottom: 20px; // Add bottom margin for spacing between movie cards
+    position: relative; // Ensure positioning context for the description box
+    overflow: hidden; // Hide overflow to prevent description box from extending beyond the card
+    transition: box-shadow 0.3s; // Add transition effect for box-shadow
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Apply box-shadow to enhance the border on hover
+  }
+  
+  .movie-card-image {
+    border-radius: 8px; // Add border radius to the movie image for rounded corners
+    transition: transform 0.3s;
+    border: solid;
     cursor: pointer;
-    margin-bottom: 20px;
-    transition: transform 0.3s;
-}
-
-.open-button:hover {
+  }
+  
+  .movie-card-image:hover {
     transform: scale(1.05);
-}
-
-.movie-card-image{
-    border-radius: 8px;
-    transition: transform 0.3s;
-    cursor: pointer
-}
-
-.movie-card-image:hover {
-   transform: scale(1.05);
-}
-
-.movieTitle{
-    font: bold;
-    font-size: large;
-    font-weight: bold;
-    font-family: 'Font Name', Poetsen One ;
-}
+  }
+  
+  .movieTitle {
+    font-size: 1.2rem; // Increase font size of the movie title
+    font-weight: bold; // Make the movie title bold
+    margin-bottom: 5px; // Add bottom margin for spacing
+  }
+  
+  .movieGenre {
+    font-size: 0.9rem; // Decrease font size of the movie genre
+    color: #737373; // Set color of the movie genre text
+  }
+  
+  .open-button {
+    color: #e50914; // Set color of the "Open" button to Netflix red
+    font-weight: bold; // Make the button text bold
+  }
+  
+  .primary {
+    background-color: #e50914; // Set background color of the "Add to Favorites" button to Netflix red
+    border-color: #e50914; // Set border color of the button to Netflix red
+    font-weight: bold; // Make the button text bold
+  }
+  
+  .primary:hover {
+    background-color: #ff0f1f; // Change background color on hover to a lighter shade of Netflix red
+    border-color: #ff0f1f; // Change border color on hover
+    color: #fff; // Change text color on hover to white
+  }
+  
+  // Description box styling
+  .description-box {
+    position: absolute; // Position the description box absolutely within the movie card
+    top: 0; // Position the description box at the top of the movie card
+    right: calc(100% + 10px); // Position the description box to the right of the movie card with a small gap
+    transform: translateY(-50%); // Center the description box vertically
+    width: 200px; // Set a fixed width for the description box
+    background-color: rgba(0, 0, 0, 0.8); // Set the background color of the description box with some transparency
+    color: #fff; // Set the text color of the description box to white
+    padding: 10px; // Add padding to the description box for spacing
+    box-sizing: border-box; // Include padding and border in the description box's total width and height
+    transition: opacity 0.3s ease; // Add a smooth transition effect for the description box opacity
+    opacity: 0; // Initially hide the description box
+  }
+  
+  .movie-card:hover .description-box {
+    opacity: 1; // Show the description box when the movie card is hovered over
+  }
