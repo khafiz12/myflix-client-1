@@ -1,0 +1,30 @@
+.delete-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height as needed */
+    border:2px solid #ccc;
+    padding:20px ;
+}
+.delete-account{
+    font-size: 1.5rem;
+    width: 100%; /* Set width of form controls to 100% */
+    padding: 10px; /* Add padding to form controls */
+    border: 2px solid #ced4da; /* Add border to form controls */
+    border-radius: 4px; 
+}
+
+.delete-user {
+    text-align: center;
+    border: 2px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+}
+
+.delete-button {
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+
+

@@ -9,37 +9,39 @@ export const MovieView = ({movies}) => {
     const movie = movies.find((b) => b.id === movieid);
     return (
         <div className="movie-info">
+         <div className="movie-info-container">
             <div className="movie-image">
                 <img src={movie.image} width={500} className="image"/>
             </div>
             <div className="movie-title">
-                <span className= "movieHeader">Title: </span>
+                <span className= "movie-Header">Title: </span>
                 <span>{movie.title}</span>
             </div>
             <div>
-                <span className="movieHeader">Director: </span>
+                <span className="movie-Header">Director: </span>
                 <span>{movie.director.name}</span>
             </div>
             <div>
-                <span className="movieHeader">Bio: </span>
+                <span className="movie-Header">Bio: </span>
                 <span>{movie.director.bio}</span>
             </div>
             <div>
-                <span classname="movieHeader">Birthday: </span>
+                <span classname="movie-Header">Birthday: </span>
                 <span>{movie.director.birthday}</span>
             </div>
             <div>
-                <span className="movieHeader">Deathday: </span>
+                <span className="movie-Header">Deathday: </span>
                 <span>{movie.director.deathday}</span>
             </div>
             <div>
-                <span className="movieHeader">Description: </span>
+                <span className="movie-Header">Description: </span>
                 <span>{movie.description}</span>
             </div>
             <div>
-                <span className="movieHeader">Genre: </span>
+                <span className="movie-Header">Genre: </span>
                 <span>{movie.genre}</span>
             </div>
+        </div>
             <Link to={`/`}>
             <button className="back-button">Back button</button>
             </Link>

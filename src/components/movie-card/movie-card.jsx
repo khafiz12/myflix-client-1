@@ -34,9 +34,6 @@ export const MovieCard = ({movie, onToggleFavorite}) => {
             {isFavorite ? "Remove from Favorites":"Add to Favorites"}
         </Button>
         <Button variant="link" className="thumbs-button">
-           <ThumbsUpIcon/>
-        </Button>
-        <Button variant="link" className="thumbs-button">
            <ThumbsDownIcon/>
         </Button>
         {isHovered && (

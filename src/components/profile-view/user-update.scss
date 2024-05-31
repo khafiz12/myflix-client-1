@@ -2,8 +2,15 @@
 .signUpForm {
     width: 100%; // Make the form span the entire width of its container
     max-width: 400px; // Set a maximum width for the form to prevent it from becoming too wide
-    margin: 0 auto; // Center the form horizontally on the page
-  }
+    margin-bottom: 20px; // Center the form horizontally on the page
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+}
   
   // Styles for the heading container
   .newUserDiv {
@@ -14,7 +21,11 @@
   // Styles for the heading text
   .newUserRegister {
     font-size: 1.5rem; // Increase the font size of the heading text
-  }
+    width: 100%; /* Set width of form controls to 100% */
+    padding: 10px; /* Add padding to form controls */
+    border: 2px solid #ced4da; /* Add border to form controls */
+    border-radius: 4px; 
+}
   
   // Styles for form groups (input fields and labels)
   .userNameGroup {
@@ -33,6 +44,7 @@
     color: #fff; // Set the text color of the button to white
     border: none; // Remove the border around the button
     padding: 10px; // Add padding to the button for spacing
+    margin-top: 20px;
     border-radius: 5px; // Add border radius for rounded corners
     cursor: pointer; // Change the cursor to a pointer on hover
   }

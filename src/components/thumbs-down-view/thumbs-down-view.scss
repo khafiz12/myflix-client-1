@@ -13,3 +13,20 @@ fill:#333
 .button-icon:active{
     transform:scale(0.9);
 }
+
+.thumbs{
+    display:flex;
+    align-items:center;
+}
+
+.thumbs svg{
+    margin-right:15px;
+    margin-top:30px
+}
+
+.dislike{
+    font-size: 10px;
+}
+.like{
+    font-size: 10px;
+}

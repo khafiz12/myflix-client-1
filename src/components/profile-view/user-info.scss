@@ -1,23 +1,29 @@
 .user-info {
-    .card {
-      border: 1px solid #dee2e6;
-      border-radius: 0.25rem;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-  
-    .card-title {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-  
-    .list-group-item {
-      padding: 0.75rem 1.25rem;
-      border-top: 1px solid #dee2e6;
-      background-color: transparent;
-    }
-  
-    .list-group-item:first-child {
-      border-top: none;
-    }
+  .card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    width: 100%; /* Set width of form controls to 100% */
+    padding: 10px; /* Add padding to form controls */
+    border: 2px solid #ced4da; /* Add border to form controls */
+    border-radius: 4px; 
+  }
+
+  .list-group-item {
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid #dee2e6;
+    background-color: transparent;
+  }
+
+  .list-group-item:first-child {
+    border-top: none;
+  }
+
+}

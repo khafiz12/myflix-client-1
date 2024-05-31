@@ -1,6 +1,7 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import Button from "react-bootstrap/Button";
+import "./user-deregister.scss"
 
 export const UserDelete = () => {
     const [message, setMessage] = useState("");
@@ -34,10 +35,10 @@ export const UserDelete = () => {
         }
     };
     return(
-        <div>
-            <h1>Delete Sccount</h1>
+        <div className="delete-user">
+            <h1 className="delete-account">Delete Account</h1>
             <p>{message}</p>
-            <Button onClick={handleDelete}>Delete Account</Button>
+            <Button className="delete-button" onClick={handleDelete}>Delete Account</Button>
         </div>
     );
 };

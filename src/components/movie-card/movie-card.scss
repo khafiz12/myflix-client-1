@@ -2,6 +2,7 @@
     border: solid; // Remove border from the card
     background-color: transparent; // Set background color to transparent
     margin-bottom: 20px; // Add bottom margin for spacing between movie cards
+    margin-top:20px;
     position: relative; // Ensure positioning context for the description box
     overflow: hidden; // Hide overflow to prevent description box from extending beyond the card
     transition: box-shadow 0.3s; // Add transition effect for box-shadow
@@ -14,8 +15,9 @@
   .movie-card-image {
     border-radius: 8px; // Add border radius to the movie image for rounded corners
     transition: transform 0.3s;
-    border: solid;
     cursor: pointer;
+    border: solid 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);;
   }
   
   .movie-card-image:hover {
@@ -68,3 +70,6 @@
   .movie-card:hover .description-box {
     opacity: 1; // Show the description box when the movie card is hovered over
   }
+
+ 
+  

@@ -32,6 +32,7 @@ export const ProfileView = ({ movies, user }) => {
             <div className="favorite-movies">
             <FavoriteMovies movies={movies} user={user}/>
             </div>
-        </div>         
-    );    
+        </div>
+          
+    )    
 };
