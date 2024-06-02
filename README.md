@@ -53,5 +53,4 @@ The application is hosted on [Netfly](https://movieflx.netlify.app/login "MovieF
 
 ## API Documentation: 
 
-
-Start exploring MyFlix today and discover a world of cinematic wonders at your fingertips!
+[Movie Fix API](https://github.com/khafiz12/movie_api "API link on github").
