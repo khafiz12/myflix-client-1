@@ -1,7 +1,7 @@
 # MyFlix Movie App
 Welcome to MyFlix, your go-to destination for discovering and exploring a vast collection of movies.
 
-Features
+## Features
 1. Browse Movies
 Explore a diverse library of movies spanning various genres, from action-packed blockbusters to heartwarming dramas.
 
@@ -20,19 +20,38 @@ Keep track of your favorite movies by adding them to your favorites list. With j
 6. User Profiles
 Create your personalized user profile to enhance your MyFlix experience. View your favorite movies, update your profile information, and more.
 
-Getting Started
-To get started with MyFlix, follow these simple steps:
+## Getting Started
+### To get started with MyFlix, follow these simple steps:
 
-Sign Up: If you're new to MyFlix, sign up for an account to access all the features. Provide your basic information, and you're good to go.
+- Sign Up: If you're new to MyFlix, sign up for an account to access all the features. Provide your basic information, and you're good to go.
 
-Log In: Already have an account? Log in with your credentials to start browsing and discovering movies right away.
+- Log In: Already have an account? Log in with your credentials to start browsing and discovering movies right away.
 
-Explore Movies: Once logged in, explore the vast collection of movies available on MyFlix. Use the search and filter options to find the perfect movie for any occasion.
+- Explore Movies: Once logged in, explore the vast collection of movies available on MyFlix. Use the search and filter options to find the perfect movie for any occasion.
 
-Add to Favorites: Found a movie you love? Add it to your favorites list to access it later with ease. Simply click the "Favorite" button on the movie details page.
+- Add to Favorites: Found a movie you love? Add it to your favorites list to access it later with ease. Simply click the "Favorite" button on the movie details page.
 
-Update Profile: Customize your user profile to reflect your preferences and interests. Update your profile picture, change your password, and more.
+- Update Profile: Customize your user profile to reflect your preferences and interests. Update your profile picture, change your password, and more.
 
-Enjoy MyFlix: Sit back, relax, and enjoy the ultimate movie-watching experience with MyFlix. Whether you're a casual movie buff or a hardcore film enthusiast, there's something for everyone on MyFlix.
+- Enjoy MyFlix: Sit back, relax, and enjoy the ultimate movie-watching experience with MyFlix. Whether you're a casual movie buff or a hardcore film enthusiast, there's something for everyone on MyFlix.
+
+## Technologies Used:
+
+- Frontend: React.js
+- Backend: Node.js with Express.js
+- Database: MongoDB
+- Hosting: Netlify (for frontend), Heroku (for backend)
+
+## Hosting
+
+The application is hosted on [Netfly](https://movieflx.netlify.app/login "MovieFlix HomePage").
+
+## Installation: 
+
+- Frontend Deployment: Deploy Netlify.
+- Backend Deployment: Deploy the backend on Heroku.
+
+## API Documentation: 
+
 
 Start exploring MyFlix today and discover a world of cinematic wonders at your fingertips!
