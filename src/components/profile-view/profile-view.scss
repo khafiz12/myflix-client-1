@@ -1,15 +1,15 @@
 .profile-view-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .user-info,
-  .user-update,
-  .user-delete,
-  .favorite-movies {
-    width: 100%;
-    max-width: 600px; /* Adjust the maximum width as needed */
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.user-info,
+.user-update,
+.user-delete,
+.favorite-movies {
+  width: 100%;
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin-bottom: 20px;
+}

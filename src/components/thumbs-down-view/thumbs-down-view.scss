@@ -1,32 +1,32 @@
- .button-icon{
-    display: flex;
-    flex-direction: row;
-    fill: 666px;
-    width:24p;
-    height:24px;
-    transition: fill 0.3s, transform 0.3s;
-    cursor:pointer;
+.button-icon {
+  display: flex;
+  flex-direction: row;
+  fill: 666px;
+  width: 24p;
+  height: 24px;
+  transition: fill 0.3s, transform 0.3s;
+  cursor: pointer;
 }
 .button-icon:hover {
-fill:#333
+  fill: #333;
 }
-.button-icon:active{
-    transform:scale(0.9);
-}
-
-.thumbs{
-    display:flex;
-    align-items:center;
+.button-icon:active {
+  transform: scale(0.9);
 }
 
-.thumbs svg{
-    margin-right:15px;
-    margin-top:30px
+.thumbs {
+  display: flex;
+  align-items: center;
 }
 
-.dislike{
-    font-size: 10px;
+.thumbs svg {
+  margin-right: 15px;
+  margin-top: 30px;
 }
-.like{
-    font-size: 10px;
+
+.dislike {
+  font-size: 10px;
+}
+.like {
+  font-size: 10px;
 }

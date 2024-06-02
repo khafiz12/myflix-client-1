@@ -1,16 +1,17 @@
-import {createRoot} from "react-dom/client";
-import {MainView} from "./components/main-view/main-view";
+import { createRoot } from "react-dom/client";
+import { MainView } from "./components/main-view/main-view";
 import Container from "react-bootstrap/Container";
-import "bootstrap/scss/bootstrap.scss"
+import "bootstrap/scss/bootstrap.scss";
 // Import statement to indicate that you need to bundle `./index.scss`
 import "./index.scss";
 //import { Container } from "react-bootstrap";
 
-const App = () => { 
-  return ( 
-  <Container className="justify-content-md-center"> 
-    <MainView /> 
-  </Container> );
+const App = () => {
+  return (
+    <Container className="justify-content-md-center">
+      <MainView />
+    </Container>
+  );
 };
 
 // Finds the root of your app
