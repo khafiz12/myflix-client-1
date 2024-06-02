@@ -4,7 +4,6 @@ import { Button, Card, CardBody } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ThumbsDownIcon } from "../thumbs-down-view/thumbs-down-view";
-import { ThumbsUpIcon } from "../thumbs-up-view/thumbs-up-view";
 import "./movie-card.scss";
 
 export const MovieCard = ({ movie, onToggleFavorite }) => {
